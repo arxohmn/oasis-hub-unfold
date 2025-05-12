@@ -198,7 +198,7 @@ const EventCalendar: React.FC = () => {
             city: 'Tallinn',
             venue: 'Culture Hub'
           },
-          category: 'Education',
+          category: 'Workshops', // Changed from 'Education' to valid category
           price: {
             range: 'Free',
             value: 0
@@ -215,7 +215,7 @@ const EventCalendar: React.FC = () => {
             city: 'Riga',
             venue: 'Creative District'
           },
-          category: 'Art',
+          category: 'Music', // Changed from 'Art' to valid category
           price: {
             range: 'Free',
             value: 0
@@ -310,12 +310,12 @@ const EventCalendar: React.FC = () => {
     // Copy link to clipboard
     navigator.clipboard.writeText(shareableLink).then(() => {
       toast({
-        title: "Group planning link created!",
+        title: "Group matcher link created!",
         description: "Link copied to clipboard. Share with your friends to start voting on events.",
       });
     }).catch(() => {
       toast({
-        title: "Group planning link created!",
+        title: "Group matcher link created!",
         description: shareableLink,
       });
     });
@@ -337,7 +337,7 @@ const EventCalendar: React.FC = () => {
                 onClick={handleCreateGroupPlan}
                 className="w-full bg-gradient-to-r from-oasis-magenta to-oasis-green text-black"
               >
-                Create Group Plan
+                Create Group Matcher
               </Button>
             </div>
           )}

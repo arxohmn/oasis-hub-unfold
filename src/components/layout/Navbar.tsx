@@ -26,7 +26,11 @@ const Navbar: React.FC = () => {
           {/* Logo */}
           <div className="flex items-center justify-start w-1/4">
             <Link to="/" className="flex items-center">
-              <span className="text-2xl font-bold neon-text">oasis.hub</span>
+              <img 
+                src="/lovable-uploads/560d08f1-8dd5-4825-8930-15ab1a4655ee.png" 
+                alt="oasis.hub logo" 
+                className="h-10 mr-2"
+              />
             </Link>
           </div>
 
