@@ -147,15 +147,26 @@ const EventDetail: React.FC = () => {
 
                   <div className="mb-4">
                     <h3 className="font-bold mb-2">Price</h3>
-                    <p className="text-2xl">€{event.price.value}</p>
+                    <p className="text-2xl">
+                      {event.price.range === 'Free' ? 'Free' : `€${event.price.value}`}
+                    </p>
                   </div>
 
-                  <Button 
-                    className="w-full bg-gradient-to-r from-oasis-cyan to-oasis-magenta text-black font-bold flex items-center justify-center gap-2 mb-2"
-                    onClick={() => window.open(event.ticketUrl, '_blank')}
-                  >
-                    <Ticket className="h-4 w-4" /> Buy Tickets
-                  </Button>
+                  {event.price.range === 'Free' ? (
+                    <Button 
+                      className="w-full bg-gradient-to-r from-oasis-cyan to-oasis-magenta text-black font-bold"
+                      disabled
+                    >
+                      Free Event
+                    </Button>
+                  ) : (
+                    <Button 
+                      className="w-full bg-gradient-to-r from-oasis-cyan to-oasis-magenta text-black font-bold flex items-center justify-center gap-2"
+                      onClick={() => window.open(event.ticketUrl, '_blank')}
+                    >
+                      <Ticket className="h-4 w-4" /> Buy Tickets
+                    </Button>
+                  )}
                 </CardContent>
               </Card>
             </div>

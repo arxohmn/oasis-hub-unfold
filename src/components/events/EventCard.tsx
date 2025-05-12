@@ -2,8 +2,9 @@
 import React from 'react';
 import { Button } from '@/components/ui/button';
 import { CategoryType, PriceRange } from './EventFilters';
-import { Calendar, Users } from 'lucide-react';
+import { Calendar, Users, Ticket } from 'lucide-react';
 import { Link, useNavigate } from 'react-router-dom';
+import { useToast } from "@/hooks/use-toast";
 
 export interface EventType {
   id: string;
@@ -35,6 +36,7 @@ interface EventCardProps {
 
 const EventCard: React.FC<EventCardProps> = ({ event }) => {
   const navigate = useNavigate();
+  const { toast } = useToast();
   
   const formatDate = (date: Date): string => {
     return new Intl.DateTimeFormat('en-US', {
@@ -52,6 +54,18 @@ const EventCard: React.FC<EventCardProps> = ({ event }) => {
     const url = event.detailsUrl || `/events/${event.id}`;
     console.log("Navigating to:", url);
     navigate(url);
+  };
+
+  const handleBuyTickets = () => {
+    if (event.ticketUrl) {
+      window.open(event.ticketUrl, '_blank');
+    } else {
+      toast({
+        title: "Ticket link unavailable",
+        description: "Ticket purchase link is not available for this event yet.",
+        variant: "destructive"
+      });
+    }
   };
 
   return (
@@ -100,6 +114,24 @@ const EventCard: React.FC<EventCardProps> = ({ event }) => {
           >
             View Details
           </Button>
+          
+          {event.price.range === 'Free' ? (
+            <Button 
+              variant="outline" 
+              className="w-full neon-border"
+              disabled
+            >
+              Free Event
+            </Button>
+          ) : (
+            <Button 
+              variant="outline" 
+              className="w-full neon-border"
+              onClick={handleBuyTickets}
+            >
+              <Ticket className="h-4 w-4 mr-2" /> Buy Tickets
+            </Button>
+          )}
         </div>
       </div>
     </div>
