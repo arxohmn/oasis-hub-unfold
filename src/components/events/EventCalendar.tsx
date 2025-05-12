@@ -51,6 +51,75 @@ const EventCalendar: React.FC = () => {
           ticketUrl: 'https://www.ekase.lv/lv/biletes/vietu-izvele/?performance=2915',
           detailsUrl: '/events/prata-vetra-mezaparks'
         },
+        // Three new events added for May 12 - May 31
+        {
+          id: 'baltic-jazz-festival',
+          title: 'Baltic Jazz Festival',
+          description: 'Annual jazz festival featuring the best jazz musicians from the Baltic states and international guests.',
+          image: 'https://images.unsplash.com/photo-1514525253161-7a46d19cd819?auto=format&fit=crop&w=800',
+          date: new Date(2025, 4, 15, 18, 0), // May 15, 2025
+          location: {
+            country: 'Estonia',
+            city: 'Tallinn',
+            venue: 'Telliskivi Creative City'
+          },
+          category: 'Music',
+          price: {
+            range: '25-50',
+            value: 30
+          },
+          friends: {
+            interested: 5,
+            going: 2
+          },
+          ticketUrl: 'https://www.piletilevi.ee/est/piletid/',
+          detailsUrl: '/events/baltic-jazz-festival'
+        },
+        {
+          id: 'latvian-design-exhibition',
+          title: 'Contemporary Latvian Design Exhibition',
+          description: 'Showcasing the latest innovations in Latvian design, from furniture and household items to fashion and digital design.',
+          image: 'https://images.unsplash.com/photo-1600585154340-be6161a56a0c?auto=format&fit=crop&w=800',
+          date: new Date(2025, 4, 20, 10, 0), // May 20, 2025
+          location: {
+            country: 'Latvia',
+            city: 'Riga',
+            venue: 'National Museum of Art'
+          },
+          category: 'Exhibitions',
+          price: {
+            range: '<25',
+            value: 8
+          },
+          friends: {
+            interested: 3,
+            going: 1
+          },
+          ticketUrl: 'https://www.lnmm.lv/en/visit/tickets',
+          detailsUrl: '/events/latvian-design-exhibition'
+        },
+        {
+          id: 'vilnius-street-food-festival',
+          title: 'Vilnius Street Food Festival',
+          description: 'A weekend-long celebration of street food from around the world, with a special focus on Lithuanian and Baltic cuisine.',
+          image: 'https://images.unsplash.com/photo-1555939594-58d7cb561ad1?auto=format&fit=crop&w=800',
+          date: new Date(2025, 4, 28, 12, 0), // May 28, 2025
+          location: {
+            country: 'Lithuania',
+            city: 'Vilnius',
+            venue: 'Cathedral Square'
+          },
+          category: 'Food',
+          price: {
+            range: 'Free',
+            value: 0
+          },
+          friends: {
+            interested: 7,
+            going: 3
+          },
+          detailsUrl: '/events/vilnius-street-food-festival'
+        },
         {
           id: '1',
           title: 'Baltic Electronic Music Festival',
