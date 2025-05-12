@@ -3,7 +3,7 @@ import React from 'react';
 import { Button } from '@/components/ui/button';
 import { CategoryType, PriceRange } from './EventFilters';
 import { Calendar, Users } from 'lucide-react';
-import { Link } from 'react-router-dom';
+import { Link, useNavigate } from 'react-router-dom';
 
 export interface EventType {
   id: string;
@@ -34,6 +34,8 @@ interface EventCardProps {
 }
 
 const EventCard: React.FC<EventCardProps> = ({ event }) => {
+  const navigate = useNavigate();
+  
   const formatDate = (date: Date): string => {
     return new Intl.DateTimeFormat('en-US', {
       weekday: 'short',
@@ -45,6 +47,11 @@ const EventCard: React.FC<EventCardProps> = ({ event }) => {
   };
 
   const totalFriends = event.friends ? event.friends.interested + event.friends.going : 0;
+
+  const handleViewDetails = () => {
+    const url = event.detailsUrl || `/events/${event.id}`;
+    navigate(url);
+  };
 
   return (
     <div className="group flex flex-col h-full overflow-hidden neon-border rounded-lg transition-all duration-300 hover:scale-[1.02]">
@@ -85,11 +92,13 @@ const EventCard: React.FC<EventCardProps> = ({ event }) => {
         </div>
         
         <div className="flex flex-col space-y-2">
-          <Link to={event.detailsUrl || `/events/${event.id}`}>
-            <Button variant="default" className="w-full bg-gradient-to-r from-oasis-cyan to-oasis-magenta text-black">
-              View Details
-            </Button>
-          </Link>
+          <Button 
+            variant="default" 
+            className="w-full bg-gradient-to-r from-oasis-cyan to-oasis-magenta text-black"
+            onClick={handleViewDetails}
+          >
+            View Details
+          </Button>
         </div>
       </div>
     </div>
