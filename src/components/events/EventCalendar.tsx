@@ -381,7 +381,7 @@ const EventCalendar: React.FC = () => {
   const handleFiltersChange = (newFilters: FiltersType) => {
     setFilters(newFilters);
   };
-  
+
   const handleCreateGroupPlan = () => {
     if (filteredEvents.length === 0) {
       toast({

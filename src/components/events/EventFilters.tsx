@@ -1,3 +1,4 @@
+
 import React, { useState } from 'react';
 import { Button } from '@/components/ui/button';
 import { Label } from '@/components/ui/label';
@@ -9,8 +10,8 @@ import { cn } from '@/lib/utils';
 import { DateRange } from 'react-day-picker';
 
 export type CategoryType = 'Music' | 'Film' | 'Theatre' | 'Dance' | 'Exhibitions' | 
-  'Performances' | 'Comedy' | 'Kids & Youth' | 'Workshops' | 'Relaxation' | 
-  'Active Lifestyle' | 'Food' | 'Sports' | 'All';
+  'Performances' | 'Comedy' | 'Kids & Youth' | 'Workshops' | 
+  'Relaxation' | 'Active Lifestyle' | 'Food' | 'Sports' | 'All';
 
 export type PriceRange = 'Free' | '<25' | '25-50' | '50-100' | '100-150' | '150+' | 'All';
 
@@ -87,10 +88,18 @@ const EventFilters: React.FC<EventFiltersProps> = ({ onFiltersChange }) => {
 
   const handleThisMonth = () => {
     const today = new Date();
-    const endOfMonth = new Date(today.getFullYear(), today.getMonth() + 1, 0);
+    // Get the current month and year (for the first day of the month)
+    const currentMonth = today.getMonth();
+    const currentYear = today.getFullYear();
+    
+    // Create start date (first day of current month)
+    const startOfMonth = new Date(currentYear, currentMonth, 1);
+    
+    // Create end date (last day of current month)
+    const endOfMonth = new Date(currentYear, currentMonth + 1, 0);
     
     const dateRange = {
-      from: today,
+      from: startOfMonth,
       to: endOfMonth
     };
     
