@@ -22,7 +22,7 @@ export type LocationType = {
 
 export type FiltersType = {
   category: CategoryType;
-  dateRange: DateRange | undefined;
+  dateRange: Partial<DateRange> | undefined;
   location: LocationType;
   priceRange: PriceRange;
 };
@@ -49,7 +49,10 @@ const EventFilters: React.FC<EventFiltersProps> = ({ onFiltersChange }) => {
 
   const [filters, setFilters] = useState<FiltersType>({
     category: 'All',
-    dateRange: undefined,
+    dateRange: {
+      from: undefined,
+      to: undefined
+    },
     location: {
       country: 'Latvia',
       city: 'Riga'

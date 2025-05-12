@@ -8,7 +8,10 @@ import { toast } from '@/hooks/use-toast';
 const EventCalendar: React.FC = () => {
   const [filters, setFilters] = useState<FiltersType>({
     category: 'All',
-    dateRange: {},
+    dateRange: {
+      from: undefined,
+      to: undefined
+    },
     location: {
       country: 'Latvia',
       city: 'Riga'
@@ -139,7 +142,7 @@ const EventCalendar: React.FC = () => {
   useEffect(() => {
     // Show group planning button when filters are applied
     const hasFilters = filters.category !== 'All' || 
-                       !!filters.dateRange.from || 
+                       !!(filters.dateRange?.from) || 
                        filters.priceRange !== 'All';
     
     setShowGroupPlanningButton(hasFilters);
@@ -151,8 +154,8 @@ const EventCalendar: React.FC = () => {
       return false;
     }
     
-    // Filter by date range
-    if (filters.dateRange.from && filters.dateRange.to) {
+    // Filter by date range - adding null checks
+    if (filters.dateRange?.from && filters.dateRange?.to) {
       const eventDate = new Date(event.date);
       if (eventDate < filters.dateRange.from || eventDate > filters.dateRange.to) {
         return false;
