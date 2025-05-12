@@ -1,3 +1,4 @@
+
 import type { Config } from "tailwindcss";
 
 export default {
@@ -61,6 +62,14 @@ export default {
 					'accent-foreground': 'hsl(var(--sidebar-accent-foreground))',
 					border: 'hsl(var(--sidebar-border))',
 					ring: 'hsl(var(--sidebar-ring))'
+				},
+				// oasis.hub custom colors
+				oasis: {
+					cyan: '#00FFFF',
+					magenta: '#FF00FF', 
+					green: '#00FF77',
+					dark: '#0A0A12',
+					'dark-blue': '#121A24',
 				}
 			},
 			borderRadius: {
@@ -84,11 +93,29 @@ export default {
 					to: {
 						height: '0'
 					}
+				},
+				'neon-pulse': {
+					'0%, 100%': { 
+						filter: 'brightness(1) drop-shadow(0 0 5px rgba(0, 255, 255, 0.7))' 
+					},
+					'50%': { 
+						filter: 'brightness(1.2) drop-shadow(0 0 10px rgba(0, 255, 255, 0.9))' 
+					},
+				},
+				'float': {
+					'0%, 100%': { transform: 'translateY(0)' },
+					'50%': { transform: 'translateY(-10px)' },
 				}
 			},
 			animation: {
 				'accordion-down': 'accordion-down 0.2s ease-out',
-				'accordion-up': 'accordion-up 0.2s ease-out'
+				'accordion-up': 'accordion-up 0.2s ease-out',
+				'neon-pulse': 'neon-pulse 3s infinite ease-in-out',
+				'float': 'float 6s infinite ease-in-out'
+			},
+			backgroundImage: {
+				'gradient-radial': 'radial-gradient(var(--tw-gradient-stops))',
+				'hero-pattern': 'linear-gradient(to right, rgba(0,255,255,0.2), rgba(255,0,255,0.2), rgba(0,255,119,0.2))'
 			}
 		}
 	},
