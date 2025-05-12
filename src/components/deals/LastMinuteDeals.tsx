@@ -6,7 +6,7 @@ import { Textarea } from '@/components/ui/textarea';
 import { Label } from '@/components/ui/label';
 import { Tabs, TabsContent, TabsList, TabsTrigger } from '@/components/ui/tabs';
 import { toast } from '@/hooks/use-toast';
-import { Calendar } from 'lucide-react';
+import { Calendar, Ticket } from 'lucide-react';
 import { CategoryType } from '../events/EventFilters';
 
 interface DealType {
@@ -81,6 +81,21 @@ const LastMinuteDeals: React.FC = () => {
       hour: 'numeric',
       minute: 'numeric'
     }).format(date);
+  };
+  
+  const handleBuyTickets = (contactInfo: string) => {
+    if (contactInfo.startsWith('http') || contactInfo.startsWith('www')) {
+      window.open(contactInfo, '_blank');
+    } else if (contactInfo.includes('@')) {
+      window.location.href = `mailto:${contactInfo}`;
+    } else if (/^\+?\d+$/.test(contactInfo.replace(/\s+/g, ''))) {
+      window.location.href = `tel:${contactInfo.replace(/\s+/g, '')}`;
+    } else {
+      toast({
+        title: "Contact Information",
+        description: contactInfo,
+      });
+    }
   };
   
   const handleFormSubmit = (e: React.FormEvent) => {
@@ -183,9 +198,18 @@ const LastMinuteDeals: React.FC = () => {
                     </div>
                   </div>
                   
-                  <Button className="w-full bg-gradient-to-r from-oasis-cyan to-oasis-magenta text-black">
-                    Contact: {deal.contactInfo}
-                  </Button>
+                  <div className="space-y-2">
+                    <Button 
+                      className="w-full bg-gradient-to-r from-oasis-cyan to-oasis-magenta text-black font-bold"
+                      onClick={() => handleBuyTickets(deal.contactInfo)}
+                    >
+                      <Ticket className="h-4 w-4 mr-2" /> Buy Tickets
+                    </Button>
+                    
+                    <div className="text-sm text-center text-muted-foreground">
+                      Contact: {deal.contactInfo}
+                    </div>
+                  </div>
                 </div>
               ))}
             </div>
