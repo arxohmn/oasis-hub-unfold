@@ -27,9 +27,9 @@ const Navbar: React.FC = () => {
           <div className="flex items-center justify-start w-1/4">
             <Link to="/" className="flex items-center">
               <img 
-                src="/lovable-uploads/8c44c583-6542-4181-8416-71ac3689953f.png" 
+                src="/lovable-uploads/560d08f1-8dd5-4825-8930-15ab1a4655ee.png" 
                 alt="oasis.hub logo" 
-                className="h-16" // Increased from h-14 to h-16
+                className="h-16" // Maintaining increased size
               />
             </Link>
           </div>
