@@ -125,7 +125,7 @@ const EventCalendar: React.FC = () => {
           title: 'Baltic Electronic Music Festival',
           description: 'Three days of cutting edge electronic music from around the Baltic region featuring top DJs and producers.',
           image: 'https://images.unsplash.com/photo-1470813740244-df37b8c1edcb?auto=format&fit=crop&w=800',
-          date: new Date(2025, 5, 15, 19, 0),
+          date: new Date(2025, 4, 14, 19, 0), // Updated from June to May 14
           location: {
             country: 'Latvia',
             city: 'Riga',
@@ -205,7 +205,7 @@ const EventCalendar: React.FC = () => {
           title: 'Digital Art Workshop',
           description: 'Learn cutting-edge digital art techniques from industry professionals in this hands-on workshop.',
           image: 'https://images.unsplash.com/photo-1605810230434-7631ac76ec81?auto=format&fit=crop&w=800',
-          date: new Date(2025, 5, 25, 10, 0),
+          date: new Date(2025, 4, 25, 10, 0), // Updated from June to May 25
           location: {
             country: 'Latvia',
             city: 'Riga',

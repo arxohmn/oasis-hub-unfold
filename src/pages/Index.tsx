@@ -1,3 +1,4 @@
+
 import React from 'react';
 import Hero from '@/components/landing/Hero';
 import EventCard, { EventType } from '@/components/events/EventCard';
@@ -13,7 +14,7 @@ const Index = () => {
       title: 'Baltic Electronic Music Festival',
       description: 'Three days of cutting edge electronic music from around the Baltic region featuring top DJs and producers.',
       image: 'https://images.unsplash.com/photo-1470813740244-df37b8c1edcb?auto=format&fit=crop&w=800',
-      date: new Date(2025, 5, 15, 19, 0),
+      date: new Date(2025, 4, 14, 19, 0), // Updated from June to May 14
       location: {
         country: 'Latvia',
         city: 'Riga',
