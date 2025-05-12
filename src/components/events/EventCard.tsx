@@ -50,6 +50,7 @@ const EventCard: React.FC<EventCardProps> = ({ event }) => {
 
   const handleViewDetails = () => {
     const url = event.detailsUrl || `/events/${event.id}`;
+    console.log("Navigating to:", url);
     navigate(url);
   };
 
