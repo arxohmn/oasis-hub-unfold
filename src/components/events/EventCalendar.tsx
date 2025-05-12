@@ -2,6 +2,8 @@
 import React, { useState, useEffect } from 'react';
 import EventFilters, { FiltersType } from './EventFilters';
 import EventCard, { EventType } from './EventCard';
+import { Button } from '@/components/ui/button';
+import { toast } from '@/hooks/use-toast';
 
 const EventCalendar: React.FC = () => {
   const [filters, setFilters] = useState<FiltersType>({
@@ -16,6 +18,7 @@ const EventCalendar: React.FC = () => {
   
   const [events, setEvents] = useState<EventType[]>([]);
   const [loading, setLoading] = useState(true);
+  const [showGroupPlanningButton, setShowGroupPlanningButton] = useState(false);
   
   // Simulated event data - In a real app, this would come from an API
   useEffect(() => {
@@ -133,6 +136,15 @@ const EventCalendar: React.FC = () => {
     return () => clearTimeout(timer);
   }, []);
   
+  useEffect(() => {
+    // Show group planning button when filters are applied
+    const hasFilters = filters.category !== 'All' || 
+                       !!filters.dateRange.from || 
+                       filters.priceRange !== 'All';
+    
+    setShowGroupPlanningButton(hasFilters);
+  }, [filters]);
+  
   const filteredEvents = events.filter(event => {
     // Filter by category
     if (filters.category !== 'All' && event.category !== filters.category) {
@@ -179,11 +191,58 @@ const EventCalendar: React.FC = () => {
     setFilters(newFilters);
   };
   
+  const handleCreateGroupPlan = () => {
+    if (filteredEvents.length === 0) {
+      toast({
+        title: "No events to share",
+        description: "Adjust your filters to find events for group planning",
+        variant: "destructive"
+      });
+      return;
+    }
+    
+    // Generate a unique ID for the event match
+    const matchId = `match-${Date.now()}`;
+    
+    // In a real app, we would save this data to the database
+    // For now, we'll just show a success message with copy-to-clipboard functionality
+    
+    const shareableLink = `${window.location.origin}/event-match/${matchId}`;
+    
+    // Copy link to clipboard
+    navigator.clipboard.writeText(shareableLink).then(() => {
+      toast({
+        title: "Group planning link created!",
+        description: "Link copied to clipboard. Share with your friends to start voting on events.",
+      });
+    }).catch(() => {
+      toast({
+        title: "Group planning link created!",
+        description: shareableLink,
+      });
+    });
+  };
+  
   return (
     <div className="w-full">
       <div className="grid grid-cols-1 lg:grid-cols-4 gap-6">
         <div className="lg:col-span-1">
           <EventFilters onFiltersChange={handleFiltersChange} />
+          
+          {showGroupPlanningButton && (
+            <div className="mt-6 glass-effect p-5 rounded-lg">
+              <h3 className="text-lg font-bold mb-3 neon-text">Plan with Friends</h3>
+              <p className="text-sm text-muted-foreground mb-4">
+                Share these events with friends and vote together to decide which one to attend.
+              </p>
+              <Button 
+                onClick={handleCreateGroupPlan}
+                className="w-full bg-gradient-to-r from-oasis-magenta to-oasis-green text-black"
+              >
+                Create Group Plan
+              </Button>
+            </div>
+          )}
         </div>
         
         <div className="lg:col-span-3">

@@ -7,6 +7,7 @@ import { Calendar as CalendarIcon, Filter } from 'lucide-react';
 import { Calendar } from '@/components/ui/calendar';
 import { format } from 'date-fns';
 import { cn } from '@/lib/utils';
+import { DateRange } from 'react-day-picker';
 
 export type CategoryType = 'Music' | 'Film' | 'Theatre' | 'Dance' | 'Exhibitions' | 
   'Performances' | 'Comedy' | 'Kids & Youth' | 'Workshops' | 'Relaxation' | 
@@ -21,10 +22,7 @@ export type LocationType = {
 
 export type FiltersType = {
   category: CategoryType;
-  dateRange: {
-    from?: Date;
-    to?: Date;
-  };
+  dateRange: DateRange | undefined;
   location: LocationType;
   priceRange: PriceRange;
 };
@@ -51,7 +49,7 @@ const EventFilters: React.FC<EventFiltersProps> = ({ onFiltersChange }) => {
 
   const [filters, setFilters] = useState<FiltersType>({
     category: 'All',
-    dateRange: {},
+    dateRange: undefined,
     location: {
       country: 'Latvia',
       city: 'Riga'
@@ -67,7 +65,7 @@ const EventFilters: React.FC<EventFiltersProps> = ({ onFiltersChange }) => {
     onFiltersChange(newFilters);
   };
   
-  const handleDateRangeChange = (dateRange: { from?: Date; to?: Date }) => {
+  const handleDateRangeChange = (dateRange: DateRange | undefined) => {
     const newFilters = { ...filters, dateRange };
     setFilters(newFilters);
     onFiltersChange(newFilters);
@@ -191,7 +189,7 @@ const EventFilters: React.FC<EventFiltersProps> = ({ onFiltersChange }) => {
                     size="sm"
                   >
                     <CalendarIcon className="mr-2 h-4 w-4" />
-                    {filters.dateRange.from ? (
+                    {filters.dateRange?.from ? (
                       filters.dateRange.to ? (
                         <>
                           {format(filters.dateRange.from, "LLL dd")} -{" "}
@@ -209,7 +207,7 @@ const EventFilters: React.FC<EventFiltersProps> = ({ onFiltersChange }) => {
                   <Calendar
                     initialFocus
                     mode="range"
-                    defaultMonth={filters.dateRange.from}
+                    defaultMonth={filters.dateRange?.from}
                     selected={filters.dateRange}
                     onSelect={handleDateRangeChange}
                     numberOfMonths={1}

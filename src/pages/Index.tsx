@@ -2,9 +2,9 @@
 import React from 'react';
 import Hero from '@/components/landing/Hero';
 import EventCard, { EventType } from '@/components/events/EventCard';
-import NewsCard, { NewsType } from '@/components/news/NewsCard';
 import { Button } from '@/components/ui/button';
 import { Link } from 'react-router-dom';
+import LastMinuteDeals from '@/components/deals/LastMinuteDeals';
 
 const Index = () => {
   // Sample featured events
@@ -62,22 +62,6 @@ const Index = () => {
     }
   ];
 
-  // Sample featured news
-  const featuredNews: NewsType = {
-    id: '1',
-    title: "Summer Music Festivals You Can't Miss in the Baltics",
-    excerpt: "From Tallinn to Vilnius, we explore the most exciting music festivals happening across the Baltic states this summer season.",
-    content: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Proin euismod, nisi vel consectetur interdum, nisl nunc egestas nisi, eu euismod nunc nisl eu nisl.',
-    image: 'https://images.unsplash.com/photo-1470813740244-df37b8c1edcb?auto=format&fit=crop&w=800',
-    publishDate: new Date(2025, 4, 10),
-    author: {
-      name: 'Laura Kalnina',
-      avatar: 'https://i.pravatar.cc/150?img=32'
-    },
-    categories: ['Music'],
-    type: 'guide'
-  };
-
   return (
     <div className="min-h-screen">
       {/* Hero Section */}
@@ -101,19 +85,14 @@ const Index = () => {
         </div>
       </section>
 
-      {/* Featured News Section */}
+      {/* Last Minute Deals Section */}
       <section className="py-16 px-4 bg-gradient-to-r from-oasis-cyan/5 via-oasis-magenta/5 to-oasis-green/5">
         <div className="container mx-auto">
           <div className="flex justify-between items-center mb-8">
-            <h2 className="text-3xl font-bold neon-text">Latest News</h2>
-            <Button asChild variant="outline" className="neon-border">
-              <Link to="/news">View All News</Link>
-            </Button>
+            <h2 className="text-3xl font-bold neon-text">Last Minute Deals</h2>
           </div>
           
-          <div className="mb-12">
-            <NewsCard news={featuredNews} isFeatured />
-          </div>
+          <LastMinuteDeals />
         </div>
       </section>
 
