@@ -10,6 +10,7 @@ import Profile from "./pages/Profile";
 import EventMatch from "./pages/EventMatch";
 import NotFound from "./pages/NotFound";
 import Navbar from "./components/layout/Navbar";
+import Deals from "./pages/Deals";
 
 const queryClient = new QueryClient();
 
@@ -25,6 +26,7 @@ const App = () => (
           <Route path="/events" element={<Events />} />
           <Route path="/profile" element={<Profile />} />
           <Route path="/event-match/:id" element={<EventMatch />} />
+          <Route path="/deals" element={<Deals />} />
           <Route path="*" element={<NotFound />} />
         </Routes>
       </BrowserRouter>
