@@ -1,3 +1,4 @@
+
 import React, { useState, useEffect } from 'react';
 import EventFilters, { FiltersType } from './EventFilters';
 import EventCard, { EventType } from './EventCard';
@@ -111,7 +112,7 @@ const EventCalendar: React.FC = () => {
         },
         {
           id: '4',
-          title: 'Baltic Food Festival',
+          title: 'Baltic Food Festival for Young People',
           description: 'Experience the best of Baltic cuisine with tastings, cooking demonstrations, and workshops.',
           image: 'https://images.unsplash.com/photo-1506744038136-46273834b3fb?auto=format&fit=crop&w=800',
           date: new Date(2025, 5, 22, 12, 0),
