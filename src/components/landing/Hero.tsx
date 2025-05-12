@@ -15,15 +15,8 @@ const Hero: React.FC = () => {
       <div className="absolute bottom-1/3 left-1/3 w-72 h-72 rounded-full bg-oasis-magenta/20 blur-3xl animate-float" style={{ animationDelay: '1s' }}></div>
       <div className="absolute top-1/3 left-1/4 w-56 h-56 rounded-full bg-oasis-green/20 blur-3xl animate-float" style={{ animationDelay: '2s' }}></div>
       
-      {/* Content */}
+      {/* Content - removed logo */}
       <div className="container mx-auto px-4 relative z-10 text-center">
-        <div className="flex justify-center mb-10">
-          <img 
-            src="/lovable-uploads/560d08f1-8dd5-4825-8930-15ab1a4655ee.png" 
-            alt="oasis.hub logo" 
-            className="h-48" // Increased from h-32 to h-48 for better visibility
-          />
-        </div>
         <p className="text-2xl md:text-3xl mb-8 max-w-2xl mx-auto">
           <span className="font-bold text-white">Scroll less.</span>
           <span className="font-bold ml-2 neon-text">Live more.</span>
