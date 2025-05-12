@@ -1,4 +1,3 @@
-
 import React, { useState } from 'react';
 import { Button } from '@/components/ui/button';
 import { Label } from '@/components/ui/label';
@@ -22,7 +21,7 @@ export type LocationType = {
 
 export type FiltersType = {
   category: CategoryType;
-  dateRange: Partial<DateRange> | undefined;
+  dateRange: DateRange | undefined;
   location: LocationType;
   priceRange: PriceRange;
 };
@@ -49,10 +48,7 @@ const EventFilters: React.FC<EventFiltersProps> = ({ onFiltersChange }) => {
 
   const [filters, setFilters] = useState<FiltersType>({
     category: 'All',
-    dateRange: {
-      from: undefined,
-      to: undefined
-    },
+    dateRange: undefined,
     location: {
       country: 'Latvia',
       city: 'Riga'
@@ -214,7 +210,6 @@ const EventFilters: React.FC<EventFiltersProps> = ({ onFiltersChange }) => {
                     selected={filters.dateRange}
                     onSelect={handleDateRangeChange}
                     numberOfMonths={1}
-                    className={cn("p-3 pointer-events-auto")}
                   />
                 </PopoverContent>
               </Popover>

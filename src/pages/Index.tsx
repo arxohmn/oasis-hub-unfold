@@ -90,6 +90,9 @@ const Index = () => {
         <div className="container mx-auto">
           <div className="flex justify-between items-center mb-8">
             <h2 className="text-3xl font-bold neon-text">Last Minute Deals</h2>
+            <Button asChild variant="outline" className="neon-border">
+              <Link to="/deals">View All Deals</Link>
+            </Button>
           </div>
           
           <LastMinuteDeals />

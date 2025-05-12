@@ -33,7 +33,7 @@ const Hero: React.FC = () => {
             <Link to="/events">Discover Events</Link>
           </Button>
           <Button variant="outline" asChild className="neon-border px-8 py-6 text-lg">
-            <Link to="/news">Read News</Link>
+            <Link to="/deals">Browse Deals</Link>
           </Button>
         </div>
       </div>

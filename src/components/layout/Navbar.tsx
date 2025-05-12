@@ -2,7 +2,7 @@
 import React, { useState } from 'react';
 import { Link, useLocation } from 'react-router-dom';
 import { Button } from "@/components/ui/button";
-import { Calendar, Home, User } from 'lucide-react';
+import { Calendar, Home, User, Tag } from 'lucide-react';
 
 const Navbar: React.FC = () => {
   const location = useLocation();
@@ -11,7 +11,7 @@ const Navbar: React.FC = () => {
   const navItems = [
     { name: 'Home', path: '/', icon: <Home className="h-5 w-5" /> },
     { name: 'Events', path: '/events', icon: <Calendar className="h-5 w-5" /> },
-    { name: 'News', path: '/news', icon: <Home className="h-5 w-5" /> },
+    { name: 'Deals', path: '/deals', icon: <Tag className="h-5 w-5" /> },
     { name: 'Profile', path: '/profile', icon: <User className="h-5 w-5" /> },
   ];
 
