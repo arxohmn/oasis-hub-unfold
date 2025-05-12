@@ -17,11 +17,11 @@ const Hero: React.FC = () => {
       
       {/* Content */}
       <div className="container mx-auto px-4 relative z-10 text-center">
-        <div className="flex justify-center mb-6">
+        <div className="flex justify-center mb-10">
           <img 
             src="/lovable-uploads/560d08f1-8dd5-4825-8930-15ab1a4655ee.png" 
             alt="oasis.hub logo" 
-            className="h-32"
+            className="h-48" // Increased from h-32 to h-48 for better visibility
           />
         </div>
         <p className="text-2xl md:text-3xl mb-8 max-w-2xl mx-auto">

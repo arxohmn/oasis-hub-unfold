@@ -29,7 +29,7 @@ const Navbar: React.FC = () => {
               <img 
                 src="/lovable-uploads/560d08f1-8dd5-4825-8930-15ab1a4655ee.png" 
                 alt="oasis.hub logo" 
-                className="h-10 mr-2"
+                className="h-14 mr-2" // Increased height from h-10 to h-14
               />
             </Link>
           </div>

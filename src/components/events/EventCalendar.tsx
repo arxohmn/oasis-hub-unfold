@@ -28,6 +28,29 @@ const EventCalendar: React.FC = () => {
     const timer = setTimeout(() => {
       const mockEvents: EventType[] = [
         {
+          id: 'prata-vetra-mezaparks',
+          title: 'Prāta Vētra koncerts Mežaparkā',
+          description: 'Grupas "Prāta Vētra" koncerts Rīgas Mežaparka Lielajā estrādē. Jaunā albuma "Gads bez kalendāra" prezentācija un vislabākās dziesmas no visu laiku repertuāra.',
+          image: 'https://images.unsplash.com/photo-1501386761578-eac5c94b800a?auto=format&fit=crop&w=800',
+          date: new Date(2025, 6, 26, 19, 0),
+          location: {
+            country: 'Latvia',
+            city: 'Riga',
+            venue: 'Mežaparks Open-Air Stage'
+          },
+          category: 'Music',
+          price: {
+            range: '25-50',
+            value: 35
+          },
+          friends: {
+            interested: 8,
+            going: 4
+          },
+          ticketUrl: 'https://www.ekase.lv/lv/biletes/vietu-izvele/?performance=2915',
+          detailsUrl: '/events/prata-vetra-mezaparks'
+        },
+        {
           id: '1',
           title: 'Baltic Electronic Music Festival',
           description: 'Three days of cutting edge electronic music from around the Baltic region featuring top DJs and producers.',

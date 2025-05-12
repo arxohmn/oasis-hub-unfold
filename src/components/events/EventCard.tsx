@@ -2,7 +2,8 @@
 import React from 'react';
 import { Button } from '@/components/ui/button';
 import { CategoryType, PriceRange } from './EventFilters';
-import { Calendar, Users } from 'lucide-react';
+import { Calendar, Users, Ticket } from 'lucide-react';
+import { Link } from 'react-router-dom';
 
 export interface EventType {
   id: string;
@@ -24,6 +25,8 @@ export interface EventType {
     interested: number;
     going: number;
   };
+  ticketUrl?: string;
+  detailsUrl?: string;
 }
 
 interface EventCardProps {
@@ -81,9 +84,29 @@ const EventCard: React.FC<EventCardProps> = ({ event }) => {
           {event.location.venue}, {event.location.city}
         </div>
         
-        <Button variant="default" className="w-full bg-gradient-to-r from-oasis-cyan to-oasis-magenta text-black">
-          View Details
-        </Button>
+        <div className="flex flex-col space-y-2">
+          {event.detailsUrl ? (
+            <Link to={event.detailsUrl}>
+              <Button variant="default" className="w-full bg-gradient-to-r from-oasis-cyan to-oasis-magenta text-black">
+                View Details
+              </Button>
+            </Link>
+          ) : (
+            <Button variant="default" className="w-full bg-gradient-to-r from-oasis-cyan to-oasis-magenta text-black">
+              View Details
+            </Button>
+          )}
+
+          {event.ticketUrl && (
+            <Button 
+              variant="outline" 
+              className="w-full neon-border flex items-center justify-center gap-2"
+              onClick={() => window.open(event.ticketUrl, '_blank')}
+            >
+              <Ticket className="h-4 w-4" /> Buy Tickets
+            </Button>
+          )}
+        </div>
       </div>
     </div>
   );
