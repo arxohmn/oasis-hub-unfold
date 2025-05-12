@@ -47,6 +47,18 @@ const LastMinuteDeals: React.FC = () => {
       price: '€8',
       category: 'Exhibitions',
       contactInfo: '+372 555 1234'
+    },
+    {
+      id: '3',
+      title: 'Contemporary Dance Workshop',
+      description: 'Join our last-minute dance workshop with internationally acclaimed choreographer Maria Välbe. Perfect for beginners!',
+      venue: 'Arts Printing House',
+      location: 'Vilnius, Lithuania',
+      date: new Date(2025, 5, 13, 18, 30),
+      price: '€12',
+      originalPrice: '€25',
+      category: 'Dance',
+      contactInfo: 'workshops@artsprinting.lt'
     }
   ]);
   
