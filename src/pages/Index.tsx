@@ -65,8 +65,8 @@ const Index = () => {
   // Sample featured news
   const featuredNews: NewsType = {
     id: '1',
-    title: 'Summer Music Festivals You Can't Miss in the Baltics',
-    excerpt: 'From Tallinn to Vilnius, we explore the most exciting music festivals happening across the Baltic states this summer season.',
+    title: "Summer Music Festivals You Can't Miss in the Baltics",
+    excerpt: "From Tallinn to Vilnius, we explore the most exciting music festivals happening across the Baltic states this summer season.",
     content: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Proin euismod, nisi vel consectetur interdum, nisl nunc egestas nisi, eu euismod nunc nisl eu nisl.',
     image: 'https://images.unsplash.com/photo-1470813740244-df37b8c1edcb?auto=format&fit=crop&w=800',
     publishDate: new Date(2025, 4, 10),

@@ -1,4 +1,3 @@
-
 import React, { useState } from 'react';
 import { Button } from '@/components/ui/button';
 import { CategoryType } from '../events/EventFilters';
@@ -45,7 +44,7 @@ const UserProfile: React.FC = () => {
     userType: 'regular',
     prompts: {
       idealWeekend: 'Art gallery hopping followed by a local music gig and dinner at a hidden gem restaurant.',
-      bestAdvice: 'The best experiences often happen when you're outside your comfort zone.'
+      bestAdvice: "The best experiences often happen when you're outside your comfort zone."
     }
   });
   

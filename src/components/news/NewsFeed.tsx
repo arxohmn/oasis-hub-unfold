@@ -20,8 +20,8 @@ const NewsFeed: React.FC = () => {
       const mockNews: NewsType[] = [
         {
           id: '1',
-          title: 'Summer Music Festivals You Can't Miss in the Baltics',
-          excerpt: 'From Tallinn to Vilnius, we explore the most exciting music festivals happening across the Baltic states this summer season.',
+          title: "Summer Music Festivals You Can't Miss in the Baltics",
+          excerpt: "From Tallinn to Vilnius, we explore the most exciting music festivals happening across the Baltic states this summer season.",
           content: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Proin euismod, nisi vel consectetur interdum, nisl nunc egestas nisi, eu euismod nunc nisl eu nisl.',
           image: 'https://images.unsplash.com/photo-1470813740244-df37b8c1edcb?auto=format&fit=crop&w=800',
           publishDate: new Date(2025, 4, 10),
@@ -61,8 +61,8 @@ const NewsFeed: React.FC = () => {
         },
         {
           id: '4',
-          title: 'Event Recap: Baltic Electronic Music Summit Brings Together Region's Top Talent',
-          excerpt: 'Last weekend's summit in Tallinn showcased emerging artists and industry veterans in a celebration of Baltic electronic music.',
+          title: "Event Recap: Baltic Electronic Music Summit Brings Together Region's Top Talent",
+          excerpt: "Last weekend's summit in Tallinn showcased emerging artists and industry veterans in a celebration of Baltic electronic music.",
           content: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Proin euismod, nisi vel consectetur interdum, nisl nunc egestas nisi, eu euismod nunc nisl eu nisl.',
           image: 'https://images.unsplash.com/photo-1526374965328-7f61d4dc18c5?auto=format&fit=crop&w=800',
           publishDate: new Date(2025, 4, 25),
@@ -75,7 +75,7 @@ const NewsFeed: React.FC = () => {
         {
           id: '5',
           title: 'Top 5 Hidden Culinary Gems in Vilnius',
-          excerpt: 'Our food expert guides you through the lesser-known but exceptional dining spots in Lithuania's capital.',
+          excerpt: "Our food expert guides you through the lesser-known but exceptional dining spots in Lithuania's capital.",
           content: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Proin euismod, nisi vel consectetur interdum, nisl nunc egestas nisi, eu euismod nunc nisl eu nisl.',
           image: 'https://images.unsplash.com/photo-1506744038136-46273834b3fb?auto=format&fit=crop&w=800',
           publishDate: new Date(2025, 4, 28),
@@ -89,7 +89,7 @@ const NewsFeed: React.FC = () => {
         {
           id: '6',
           title: 'Behind the Scenes: Preparing for the Baltic Dance Festival',
-          excerpt: 'We follow the organizers and performers as they prepare for one of the region's most anticipated dance events.',
+          excerpt: "We follow the organizers and performers as they prepare for one of the region's most anticipated dance events.",
           content: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Proin euismod, nisi vel consectetur interdum, nisl nunc egestas nisi, eu euismod nunc nisl eu nisl.',
           image: 'https://images.unsplash.com/photo-1526374965328-7f61d4dc18c5?auto=format&fit=crop&w=800',
           publishDate: new Date(2025, 5, 2),
