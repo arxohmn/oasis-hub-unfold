@@ -1,4 +1,3 @@
-
 import React from 'react';
 import Hero from '@/components/landing/Hero';
 import EventCard, { EventType } from '@/components/events/EventCard';
@@ -24,6 +23,10 @@ const Index = () => {
       price: {
         range: '25-50',
         value: 39.99
+      },
+      friends: {
+        interested: 3,
+        going: 2
       }
     },
     {
@@ -41,6 +44,10 @@ const Index = () => {
       price: {
         range: 'Free',
         value: 0
+      },
+      friends: {
+        interested: 1,
+        going: 0
       }
     },
     {

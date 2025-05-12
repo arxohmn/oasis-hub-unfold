@@ -2,7 +2,7 @@
 import React from 'react';
 import { Button } from '@/components/ui/button';
 import { CategoryType, PriceRange } from './EventFilters';
-import { Calendar } from 'lucide-react';
+import { Calendar, Users } from 'lucide-react';
 
 export interface EventType {
   id: string;
@@ -19,6 +19,10 @@ export interface EventType {
   price: {
     range: PriceRange;
     value?: number;
+  };
+  friends?: {
+    interested: number;
+    going: number;
   };
 }
 
@@ -37,6 +41,8 @@ const EventCard: React.FC<EventCardProps> = ({ event }) => {
     }).format(date);
   };
 
+  const totalFriends = event.friends ? event.friends.interested + event.friends.going : 0;
+
   return (
     <div className="group flex flex-col h-full overflow-hidden neon-border rounded-lg transition-all duration-300 hover:scale-[1.02]">
       <div className="relative h-48 overflow-hidden">
@@ -50,6 +56,13 @@ const EventCard: React.FC<EventCardProps> = ({ event }) => {
             {event.price.range === 'Free' ? 'Free' : `€${event.price.value || event.price.range}`}
           </span>
         </div>
+        
+        {totalFriends > 0 && (
+          <div className="absolute top-2 left-2 bg-black/60 backdrop-blur-sm px-2 py-1 rounded-md flex items-center text-white text-sm">
+            <Users className="h-3 w-3 mr-1 text-oasis-cyan" />
+            <span>{totalFriends} friend{totalFriends !== 1 ? 's' : ''}</span>
+          </div>
+        )}
       </div>
       
       <div className="flex-1 p-4 bg-card">

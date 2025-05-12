@@ -1,4 +1,3 @@
-
 import React, { useState, useEffect } from 'react';
 import EventFilters, { FiltersType } from './EventFilters';
 import EventCard, { EventType } from './EventCard';
@@ -43,6 +42,10 @@ const EventCalendar: React.FC = () => {
           price: {
             range: '25-50',
             value: 39.99
+          },
+          friends: {
+            interested: 3,
+            going: 2
           }
         },
         {
@@ -60,6 +63,10 @@ const EventCalendar: React.FC = () => {
           price: {
             range: 'Free',
             value: 0
+          },
+          friends: {
+            interested: 1,
+            going: 0
           }
         },
         {
@@ -94,6 +101,10 @@ const EventCalendar: React.FC = () => {
           price: {
             range: '<25',
             value: 15
+          },
+          friends: {
+            interested: 0,
+            going: 4
           }
         },
         {
@@ -128,6 +139,90 @@ const EventCalendar: React.FC = () => {
           price: {
             range: '<25',
             value: 20
+          },
+          friends: {
+            interested: 2,
+            going: 1
+          }
+        },
+        {
+          id: '7',
+          title: 'Classical Music Symphony',
+          description: 'Experience the Baltic Philharmonic Orchestra performing masterpieces by Beethoven and local composers.',
+          image: 'https://images.unsplash.com/photo-1465146344425-f00d5f5c8f07?auto=format&fit=crop&w=800',
+          date: new Date(2025, 5, 28, 19, 0),
+          location: {
+            country: 'Lithuania',
+            city: 'Vilnius',
+            venue: 'National Philharmonic Hall'
+          },
+          category: 'Music',
+          price: {
+            range: '50-100',
+            value: 65
+          },
+          friends: {
+            interested: 1,
+            going: 1
+          }
+        },
+        {
+          id: '8',
+          title: 'Urban Photography Walk',
+          description: 'Join professional photographers for a guided tour through historical districts capturing unique urban moments.',
+          image: 'https://images.unsplash.com/photo-1483058712412-4245e9b90334?auto=format&fit=crop&w=800',
+          date: new Date(2025, 6, 2, 11, 0),
+          location: {
+            country: 'Latvia',
+            city: 'Riga',
+            venue: 'Old Town'
+          },
+          category: 'Workshops',
+          price: {
+            range: '<25',
+            value: 15
+          },
+          friends: {
+            interested: 5,
+            going: 0
+          }
+        },
+        {
+          id: '9',
+          title: 'Baltic Book Fair',
+          description: 'The largest literary event in the region with author signings, readings, and panel discussions.',
+          image: 'https://images.unsplash.com/photo-1488972685288-c3fd157d7c7a?auto=format&fit=crop&w=800',
+          date: new Date(2025, 6, 5, 10, 0),
+          location: {
+            country: 'Estonia',
+            city: 'Tallinn',
+            venue: 'Culture Hub'
+          },
+          category: 'Education',
+          price: {
+            range: 'Free',
+            value: 0
+          }
+        },
+        {
+          id: '10',
+          title: 'Street Art Festival',
+          description: 'International and local artists transform city walls with stunning murals and installations.',
+          image: 'https://images.unsplash.com/photo-1549060279-7e168fcee0c2?auto=format&fit=crop&w=800',
+          date: new Date(2025, 6, 10, 9, 0),
+          location: {
+            country: 'Latvia',
+            city: 'Riga',
+            venue: 'Creative District'
+          },
+          category: 'Art',
+          price: {
+            range: 'Free',
+            value: 0
+          },
+          friends: {
+            interested: 6,
+            going: 3
           }
         }
       ];
